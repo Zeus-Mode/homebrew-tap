@@ -11,8 +11,8 @@
 # depends_on below is Homebrew's symbolic spelling of the same floor the helper
 # receives as a number and writes into the appcast: both change together.
 cask "zeus" do
-  version "0.8.0"
-  sha256 "b22fc7f134cbac5f3df3ea11108bd3a73a01aae4a3edcbc40100d52659f54075"
+  version "0.9.0"
+  sha256 "7ab2598dc925d749236e3ceea176d212f3355f1edcd1daaec821006fdb34b3f6"
 
   url "https://zeusmode.ai/releases/Zeus-#{version}.dmg"
   name "Zeus"
