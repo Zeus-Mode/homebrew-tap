@@ -11,8 +11,8 @@
 # depends_on below is Homebrew's symbolic spelling of the same floor the helper
 # receives as a number and writes into the appcast: both change together.
 cask "zeus" do
-  version "0.27.0"
-  sha256 "e1c21465ab2c5a5d4cdb331060ecce8561c85e81f9cc915674957d35b21bb79c"
+  version "0.28.0"
+  sha256 "5ec311c1e1fdbcea1ef1dfe6b27ab60a21df154cf01ce14d6f820c213fdc65dd"
 
   url "https://zeusmode.ai/releases/Zeus-#{version}.dmg"
   name "Zeus"
@@ -24,9 +24,10 @@ cask "zeus" do
     regex(/"version"\s*:\s*"v?(\d+(?:\.\d+)+)"/i)
   end
 
-  # brew upgrade is what upgrades this app. The app sees the Caskroom directory and
-  # turns its own updater off (Zeus distribution brief, D2).
-  auto_updates false
+  # The app updates itself: a Homebrew copy runs Sparkle as a download does (Zeus
+  # distribution brief, D2 amended), so plain brew upgrade leaves it to Sparkle.
+  # True from the release after v0.27.0, which shipped that app under false.
+  auto_updates true
   depends_on macos: ">= :sonoma"
 
   app "Zeus.app"
